@@ -1,0 +1,563 @@
+/* Google Fonts Import Link */
+
+/* for FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  overflow: hidden;
+}
+                      /*   Class  sidebar close :27 line*/
+.sidebar             /* dark blue side menu bar OPEN SIZE*/
+{                 
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background:  #000000;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+.sidebar.close        /* dark blue side menu bar CLOSE SIZE */
+{
+  width: 78px;
+}
+                          /*   Class logo-details :28 line  */
+.sidebar .logo-details
+{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i
+{
+  font-size: 30px;
+  color: #fff;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.sidebar .logo-details .logo_name     /* OPEN sidebar  Class logo_name :31 line (casi logo) */
+{
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+.sidebar.close .logo-details .logo_name       /* CLOSE sidebar  Class logo_name :31 line (casi logo) */
+{
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+                                  /* dark blue side SUB-MENU BAR CLOSE SIZE */
+
+.sidebar .nav-links               /* OPEN sidebar  Class nav-link :35 line( UP-DOWN SLIDER )  CLOSE SIZE */
+{
+  height: 100%;
+  padding: 8px 0 150px 0;
+  overflow: auto;
+  
+}
+.sidebar.close .nav-links                 /*CLOSE sidebar ...dark blue side( UP-DOWN SLIDER HIDE )  CLOSE SIZE */
+{
+  overflow: visible;    
+}
+.sidebar .nav-links::-webkit-scrollbar    /*CLOSE sidebar ...dark blue side( UP-DOWN SLIDER HIDE )  CLOSE SIZE */
+{
+  display: none;
+}
+.sidebar .nav-links li{         /* CLOSE sidebar ALL <li> SECTION ( ALL ICON POSITION) */
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover    /* CLOSE sidebar ALL <li> SECTION ( ALL SECTION highlighter) */
+{
+  background: #1d1b31;
+}
+.sidebar .nav-links li .iocn-link     /* CLOSE sidebar ALL <li> SECTION ( ALL ICON CONNECTION) */
+{  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link   /* CLOSE sidebar ALL icon-link HIDE */
+{
+  display: block
+}
+.sidebar .nav-links li i    /* CLOSE sidebar ALL <i> SECTION ( DROP DOWN LIST ARROW ) */
+{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow     /* CLOSE sidebar ALL <i> SECTION ( LEFT SIDE SLIDE ANIMATION ) */
+{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow     /* CLOSE sidebar ALL <i> SECTION ( DROP DOWN LIST ARROW HIDE) */
+{
+  display: none;
+}
+.sidebar .nav-links li a    /* CLOSE sidebar ALL <a> SECTION ( TEXT/ICON POSITION ALIGN IN MAIN MENU) */
+{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name /* CLOSE sidebar HIDE ALL MAIN MENU TEXT only*/ /* NO USE SEEN */
+{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-links li a .link_name /* CLOSE sidebar RIGHT-SLIDE SUB MENU SECTION TEMPLATE OPACITY CONTROL*/
+{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu    /* CLOSE sidebar TRANSATION SUB MENU SECTION TEMPLATE*/
+{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #1d1b31;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu  /* CLOSE sidebar ALL SUB MENU HIDE FROM FRONT */ /* NOT USE SEEN */
+{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a    /* CLOSE sidebar HIGHTLIGHT THE SUB MENU SECTION ICON AND TEXT */
+{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover     /* CLOSE sidebar OPACITY CONTROL OF SUB MENU SECTION TEMPLATE IN MAIN MENU*/
+{
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu    /* CLOSE sidebar ADD SUB MENU SECTION TEMPLATE IN MAIN MENU*/
+{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu    /* CLOSE sidebar ADD TRANSATION IN SUB MENU SECTION TEMPLATE*/
+{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name     /* OPEN sidebar HIDE SECTION TITLE FROM SUB MENU TEMPLATE*/
+{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name   /* CLOSE sidebar DISPLAY NEW SECTION TITLE FROM SUB MENU TEMPLATE*/
+{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank  /* CLOSE sidebar SMOOTH OPACITY TRANSATION IN SUB MENU TEMPLATE*/
+{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank      /* CLOSE sidebar SMOOTH TRANSATION IN SUB MENU TEMPLATE*/
+{
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+/* ---------------------------------------------------------------------- home section---------------------------------------------- */
+
+
+.home-section    /* aligh properties with sidebar */
+{
+  position: relative;
+  background: #fff;
+  height: 100vh;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+  padding: 12px;
+}
+.sidebar.close ~ .home-section   /* left aligh with sidebar */
+{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.home-content{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/*-----------------------------------------------------------------     ...chat gpt - 3...         ---------------------------------------------*/
+
+#chat_container 
+{
+  flex: 1;
+  width: 100%;
+  height: 94.9%;
+  overflow-y: scroll;
+  
+  background: #6b6b6f;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar 
+{
+  display: none;
+}
+.wrapper {
+  width: 100%;
+  padding: 15px;
+}
+
+.ai {
+  background: #40414F;
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+
+  background: #5436da00;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.message {
+  flex: 1;
+
+  color: #dcdcdc;
+  font-size: 20px;
+
+  max-width: 100%;
+  overflow-x: scroll;
+
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap; 
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+form                        /* form section or Grey textarea background  */
+{
+  position: relative;
+  top :40px;
+  left: 50px;
+  z-index: 100;
+  width: 190%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 7px;
+  background:transparent;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+input                  /* Text Area or typing section */
+{
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  font-size: 18px;
+  padding: 5px;
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  resize: none;
+}
+input::-webkit-scrollbar
+{
+  display: none;
+}
+.placeholder
+{
+  position:absolute;
+  top:20px;
+  left: 15px;
+  color:#b3b3b9;
+  font-size: small;
+  transition: top .2s;
+  padding: 0 5px;
+}
+input:focus 
+{
+  border: 2px solid #00ffcc;
+
+}
+input:focus ~ .placeholder
+{
+  top: 0px;
+  font-size: small;
+  color: #00ffcc;
+  background: #40414F;
+  
+}
+button                      /* Submit Button  */
+ {
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #00000037;
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.3);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+form img                    /* Submit Button Icon Size */
+{
+  width: 25px;
+  height: 25px;
+}
+
+
+/*---------------------------------------------------DATE / TIME----------------------------------------------------*/
+
+.widgetContainer
+{
+  position: fixed;
+  top :42px;
+  right: 0%;
+  font-size: 8px;
+  padding:10px;
+  background:  #323233;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  border-radius: 5px;
+  border-right: 5px  #00ffcc solid;
+  border-left: 5px  #00ffcc solid;
+  height: 40px;
+  width: 150px;
+  z-index: 100;
+  transition: all 0.7s ease;
+  font-weight: 500;
+  font-family: 'Inter',sans-serif;
+  padding: 7px;
+  overflow: auto;
+  cursor: pointer;
+} 
+.widgetContainer::-webkit-scrollbar
+{
+  display: none;
+}
+.widgetContainer.active
+{
+  position: fixed;
+  right: 0%;
+  font-size: 8px;
+  padding:10px;
+  background:  #323233;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  border-radius: 5px;
+  border-right: 10px  #00ffcc solid;
+  height: 140px;
+  width: 310px;
+  z-index: 100;
+  transition: all 0.s ease;
+  font-weight: 500;
+  font-family: 'Inter',sans-serif;
+  padding: 7px;
+  overflow: auto;
+}
+.time
+{
+position :absolute;
+right : 10px;
+top :5px;
+font-size: 3em;
+color: #00ffcc;
+}
+.widgetContainer.active .notification
+{
+  position: absolute;
+  top: 0%;
+  font-size: 1.4em;
+  font-weight: -100;
+  color:#EE4B2B
+}
+.widgetContainer.active .date
+{
+position: absolute;
+left: 100px;
+bottom: 75px;
+font-size: 1.75em;
+  color: #ffffff;
+}
+.widgetContainer.active  .weather-icon
+{
+  position: absolute;
+  top: 5%;
+
+}
+.widgetContainer.active .temperature-value
+{
+position: absolute;
+bottom: 30px;
+font-size: 3.5em;
+color: #00ffcc;
+}
+.widgetContainer.active .temperature-description
+{
+  position: absolute;
+  bottom: 15px;
+  font-size: 1.75em;
+  color: #ffffff;
+}
+.widgetContainer.active .location
+{
+  position: absolute;
+  bottom : -5px;
+  font-size: 1.75em;
+  color: #ffffff;
+}
+
+/*---------------------------------------------------Breaking News Section --------------*/
+
+.news-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-family: "Roboto", sans-serif;
+  box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+}
+
+.news-container .title {
+  position: absolute;
+  background: #40414F;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #00ffcc;
+  font-weight: bold;
+  z-index: 200;
+}
+
+.news-container ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  animation: scroll 35s infinite linear;
+}
+
+.news-container ul li {
+  white-space: nowrap;
+  padding: 10px 24px;
+  color: #ffffff;
+  position: relative;
+}
+
+.news-container ul li::after {
+  content:"";
+  width: 1px;
+  height: 100%;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.news-container ul li:last-child::after {
+  display: none;
+}
+
+@keyframes scroll {
+  from {
+      transform: translateX(100%);
+  }
+
+  to {
+      transform: translateX(-2000px);
+
+  }
+}
+
+/*---------------------------------------------------Text to speech Section --------------*/
+
+.form-group
+{
+  display: none;
+}
