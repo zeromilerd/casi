@@ -443,7 +443,7 @@ let loadInterval;
   
     // fetch data from server -> bot's response
     try {
-      const response = await fetch('https://casi-live.onrender.com/', {
+      const response = await fetch('https://casi-live.onrender.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
